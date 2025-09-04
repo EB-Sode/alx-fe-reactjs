@@ -7,7 +7,7 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
-import { UserProvider } from './components/UserContext';
+import UserContext from './components/UserContext';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -40,9 +40,9 @@ function App() {
       <MainContent />
       <Footer />
 
-      <UserProvider value={{ name: "Bob", age: 30, bio: "Enjoys cooking and traveling" }}>
+      <UserContext.Provider value={{ name: "Bob", age: 30, bio: "Enjoys cooking and traveling" }}>
         <UserProfile />
-      </UserProvider>
+      </UserContext.Provider>
     </>
   )
 }
