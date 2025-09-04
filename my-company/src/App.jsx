@@ -9,7 +9,7 @@ import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Services from './components/Services.jsx'
 import Navbar from './components/Navbar.jsx'
-import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { createBrowserRouter, Routes, Outlet } from 'react-router-dom'
 
 
 const Layout = () => {
