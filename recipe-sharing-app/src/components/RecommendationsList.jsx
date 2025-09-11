@@ -1,6 +1,6 @@
 import useRecipeStore from './recipeStore';
 
-const RecommendationList = () => {
+const RecommendationsList = () => {
   const recommendations = useRecipeStore(state => state.recommendations);
 
   return (

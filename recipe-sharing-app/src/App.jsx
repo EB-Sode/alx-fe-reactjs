@@ -5,7 +5,7 @@ import EditRecipeForm from "./components/EditRecipeForm";
 import RecipeDetails from "./components/RecipeDetails";
 import RecipeList from "./components/RecipeList";
 import SearchBar from "./components/SearchBar";
-import RecommendationList from "./components/RecommendationList";
+import RecommendationsList from "./components/RecommendationsList";
 import FavoritesList from "./components/FavoritesList";
 import Layout from "./components/layout";
 // import useRecipeStore from "./components/recipeStore";
@@ -22,7 +22,7 @@ function App() {
         <Route path="recipes/:id" element={<RecipeDetails />} />
         <Route path="recipes/:id/edit" element={<EditRecipeForm />} />
         <Route path="recipes/:id/delete" element={<DeleteRecipeForm />} />
-        <Route path="recommendations" element={<RecommendationList />} />
+        <Route path="recommendations" element={<RecommendationsList />} />
         <Route path="favorites" element={<FavoritesList />} />
         <Route path="search" element={<SearchBar />} />
       </Routes>
