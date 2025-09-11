@@ -6,8 +6,8 @@ function EditRecipeForm() {
   const [id, setId] = useState("");
   const [title, setTitle] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (!id.trim() || !title.trim()) return;
 
     updateRecipe(Number(id), { title });
