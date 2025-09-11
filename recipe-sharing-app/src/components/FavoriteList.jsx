@@ -1,5 +1,5 @@
 import React from "react";
-import useRecipeStore from "../store/useRecipeStore";
+import useRecipeStore from "./recipeStore";
 
 const FavoritesList = () => {
   // ✅ Subscribe only to primitives (arrays from store)

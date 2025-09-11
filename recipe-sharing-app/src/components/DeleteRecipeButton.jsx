@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useRecipeStore from "../store/useRecipeStore";
+import useRecipeStore from "./recipeStore";
 
 function DeleteRecipeForm() {
   const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
