@@ -1,9 +1,11 @@
 import { useState } from "react";
 import useRecipeStore from "./recipeStore";
+import {useNavigate} from 'react-router-dom';
 
 function DeleteRecipeForm() {
   const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
   const [id, setId] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,6 +13,7 @@ function DeleteRecipeForm() {
 
     deleteRecipe(Number(id));
     setId("");
+    navigate('/');
   };
 
   return (
@@ -31,3 +34,4 @@ function DeleteRecipeForm() {
 }
 
 export default DeleteRecipeForm;
+
