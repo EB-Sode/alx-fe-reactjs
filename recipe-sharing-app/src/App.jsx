@@ -6,7 +6,7 @@ import RecipeDetails from "./components/RecipeDetails";
 import RecipeList from "./components/RecipeList";
 import SearchBar from "./components/SearchBar";
 import RecommendationList from "./components/RecommendationList";
-import FavoritesList from "./components/FavoriteList";
+import FavoritesList from "./components/FavoritesList";
 import Layout from "./components/layout";
 // import useRecipeStore from "./components/recipeStore";
 import './index.css';
