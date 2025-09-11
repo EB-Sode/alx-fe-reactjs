@@ -1,7 +1,13 @@
 import { create } from "zustand";
+import { persist } from 'zustand/middleware';
 
-const useRecipeStore = create((set, get) => ({
-  recipes: [],
+const useRecipeStore = create(
+  persist((set, get) => ({
+  recipes: [
+    { id: 1, title: "Jollof Rice", description: "Spicy West African rice dish." },
+    { id: 2, title: "Egusi Soup", description: "Nigerian melon seed soup with spinach." },
+  ],
+
   favorites: [],
   recommendations: [],
   searchTerm: "",
@@ -51,7 +57,8 @@ const useRecipeStore = create((set, get) => ({
     return recipes.filter((recipe) =>
       recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  },
-}));
+  }, 
+}), { name: "recipe-storage" }
+));
 
 export default useRecipeStore;
