@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { fetchUserData } from "../services/githubService";
 
 function Search() {
   // State for the input value
@@ -21,26 +22,37 @@ function Search() {
     setError("");
     setUserData(null);
 
+    // try {
+    //   // Make request to GitHub API
+    //   const response = await fetch(`https://api.github.com/users/${username}`);
+
+    //   // If response is not successful (e.g. 404), throw error
+    //   if (!response.ok) {
+    //     throw new Error("User not found");
+    //   }
+
+    //   // Parse JSON response
+    //   const data = await response.json();
+
+    //   // Save user data in state
+    //   setUserData(data);
+    // } catch (err) {
+    //   // If request fails (network error, 404, etc.)
+    //   console.error(err.message);
+    //   setError("Looks like we can’t find the user");
+    // } finally {
+    //   // Always stop loading state (whether success or error)
+    //   setLoading(false);
+    // }
+
     try {
-      // Make request to GitHub API
-      const response = await fetch(`https://api.github.com/users/${username}`);
-
-      // If response is not successful (e.g. 404), throw error
-      if (!response.ok) {
-        throw new Error("User not found");
-      }
-
-      // Parse JSON response
-      const data = await response.json();
-
-      // Save user data in state
+      // 👇 directly uses the full GitHub API URL in the service
+      const data = await fetchUserData(username);
       setUserData(data);
     } catch (err) {
-      // If request fails (network error, 404, etc.)
-      console.error(err.message);
+      console.logerror(err.message);
       setError("Looks like we can’t find the user");
     } finally {
-      // Always stop loading state (whether success or error)
       setLoading(false);
     }
 
