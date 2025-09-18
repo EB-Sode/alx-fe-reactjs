@@ -31,14 +31,14 @@ function Search() {
       const users = await fetchUserData(query);
       setResults(users);
     } catch (err) {
-      console.logerror(err.message);
+      console.error(err.message);
       setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }
 
     // Clear input field after search
-    setResults("");
+    setResults([]);
   };
 
    return (
