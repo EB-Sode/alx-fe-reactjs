@@ -4,9 +4,9 @@ import { fetchUserData } from "../services/githubService";
 function Search() {
   // State for the input value
   const [username, setUsername] = useState("");
-
-  // State for API response data
-  const [userData, setUserData] = useState(null);
+  const [location, setLocation] = useState("");
+  const [minRepos, setMinRepos] = useState("");
+  const [results, setResults] = useState([]);
 
   // State for loading and error handling
   const [loading, setLoading] = useState(false);
@@ -20,35 +20,16 @@ function Search() {
     // Reset states before making API call
     setLoading(true);
     setError("");
-    setUserData(null);
 
-    // try {
-    //   // Make request to GitHub API
-    //   const response = await fetch(`https://api.github.com/users/${username}`);
-
-    //   // If response is not successful (e.g. 404), throw error
-    //   if (!response.ok) {
-    //     throw new Error("User not found");
-    //   }
-
-    //   // Parse JSON response
-    //   const data = await response.json();
-
-    //   // Save user data in state
-    //   setUserData(data);
-    // } catch (err) {
-    //   // If request fails (network error, 404, etc.)
-    //   console.error(err.message);
-    //   setError("Looks like we can’t find the user");
-    // } finally {
-    //   // Always stop loading state (whether success or error)
-    //   setLoading(false);
-    // }
+    // Build query dynamically
+    let query = username || "";
+    if (location) query += `+location:${location}`;
+    if (minRepos) query += `+repos:>${minRepos}`;
 
     try {
       // 👇 directly uses the full GitHub API URL in the service
-      const data = await fetchUserData(username);
-      setUserData(data);
+      const users = await fetchUserData(query);
+      setResults(users);
     } catch (err) {
       console.logerror(err.message);
       setError("Looks like we cant find the user");
@@ -57,57 +38,99 @@ function Search() {
     }
 
     // Clear input field after search
-    setUsername("");
+    setResults("");
   };
 
-  return (
-    <div>
+   return (
+    <div className="max-w-3xl mx-auto p-6">
+      <h1 className="text-2xl font-bold text-center mb-6">GitHub User Search</h1>
+
       {/* Search Form */}
-      <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
-        <input
-          type="text"
-          placeholder="Enter GitHub username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          style={{
-            padding: "8px",
-            marginRight: "10px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        />
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded-lg p-6 mb-8 space-y-4"
+      >
+        {/* Username */}
+        <div>
+          <label htmlFor="username" className="block text-gray-700 font-medium">
+            Username
+          </label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+
+        {/* Location */}
+        <div>
+          <label htmlFor="location" className="block text-gray-700 font-medium">
+            Location
+          </label>
+          <input
+            id="location"
+            type="text"
+            placeholder="e.g. Nigeria"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+
+        {/* Minimum Repos */}
+        <div>
+          <label htmlFor="minRepos" className="block text-gray-700 font-medium">
+            Minimum Repositories
+          </label>
+          <input
+            id="minRepos"
+            type="number"
+            placeholder="e.g. 10"
+            value={minRepos}
+            onChange={(e) => setMinRepos(e.target.value)}
+            className="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring focus:ring-blue-400 focus:outline-none"
+          />
+        </div>
+
+        {/* Submit Button */}
         <button
           type="submit"
-          style={{
-            padding: "8px 12px",
-            border: "none",
-            borderRadius: "5px",
-            backgroundColor: "#24292f",
-            color: "#fff",
-            cursor: "pointer",
-          }}
+          className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none"
         >
           Search
         </button>
       </form>
 
-      {/* Conditional Rendering */}
-      {loading && <p>Loading...</p>} {/* Show while waiting for API */}
-      {error && <p style={{ color: "red" }}>{error}</p>} {/* Show if error */}
-      {userData && ( /* Show user details if success */
-        <div style={{ marginTop: "20px" }}>
-          <img
-            src={userData.avatar_url}
-            alt={userData.login}
-            width="100"
-            style={{ borderRadius: "50%" }}
-          />
-          <h3>{userData.name || userData.login}</h3>
-          <a href={userData.html_url} target="_blank" rel="noreferrer">
-            View GitHub Profile
-          </a>
-        </div>
-      )}
+      {/* Loading / Error / Results */}
+      {loading && <p className="text-center text-gray-600">Loading...</p>}
+      {error && <p className="text-center text-red-600">{error}</p>}
+
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {results.map((user) => (
+          <div
+            key={user.id}
+            className="bg-white shadow rounded-lg p-4 text-center"
+          >
+            <img
+              src={user.avatar_url}
+              alt={user.login}
+              className="w-20 h-20 rounded-full mx-auto mb-3"
+            />
+            <h2 className="text-lg font-semibold">{user.login}</h2>
+            <a
+              href={user.html_url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              View Github Profile
+            </a>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

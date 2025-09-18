@@ -9,7 +9,8 @@ function Layout() {
         <nav>
           <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
           <Link to="/about" style={{ marginRight: "10px" }}>About</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" style={{ marginRight: "10px" }}>Contact</Link>
+          <Link to="/search">Search</Link>
         </nav>
       </header>
 
