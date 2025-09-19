@@ -15,30 +15,31 @@ function Search() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevent page reload
-    if (!username.trim()) return; // ignore empty input
+    if (!username.trim() && !location.trim() && !minRepos){
+      setError("Please enter atleast one search criteria")
+    }
 
     // Reset states before making API call
     setLoading(true);
     setError("");
 
-    // Build query dynamically
-    let query = username || "";
-    if (location) query += `+location:${location}`;
-    if (minRepos) query += `+repos:>${minRepos}`;
-
     try {
       // 👇 directly uses the full GitHub API URL in the service
-      const users = await fetchUserData(query);
-      setResults(users);
+      const data = await fetchUserData({
+        username,
+        location,
+        minRepos,
+        page: 1,
+        perpage: 6
+      });
+
+      setResults(data.items);
     } catch (err) {
       console.error(err.message);
       setError("Looks like we cant find the user");
     } finally {
       setLoading(false);
     }
-
-    // Clear input field after search
-    setResults([]);
   };
 
    return (

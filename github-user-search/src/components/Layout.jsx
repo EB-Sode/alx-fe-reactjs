@@ -39,10 +39,10 @@ function Layout() {
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold text-blue-600">🌐 My React App</h1>
         <nav className="flex items-center space-x-6">
-        <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-        <Link to="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-        <Link to="/contact" className="text-gray-700 hover:text-blue-600">Contact</Link>
-        <Link to="/search" className="text-gray-700 hover:text-blue-600">Search</Link>
+        <Link to="/" className="text-gray-700 hover:text-blue-600">Home </Link>
+        <Link to="/about" className="text-gray-700 hover:text-blue-600">About </Link>
+        <Link to="/contact" className="text-gray-700 hover:text-blue-600">Contact </Link>
+        <Link to="/search" className="text-gray-700 hover:text-blue-600">Search </Link>
         </nav>
         
         </div>
