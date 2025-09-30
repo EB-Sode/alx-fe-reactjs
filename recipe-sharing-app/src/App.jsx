@@ -31,13 +31,3 @@ function App() {
 }
 
 export default App;
-
-
-// ALTERNATIVE RENDERING OF RECIPES LIST
-      // <ul>
-      //   {recipes.map((recipe) => (
-      //     <li key={recipe.id}>
-      //       {recipe.id} - {recipe.title}
-      //     </li>
-      //   ))}
-      // </ul>
