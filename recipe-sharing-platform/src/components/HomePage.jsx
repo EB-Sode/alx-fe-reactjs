@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import recipeData from '../data.json';
 
 export default function HomePage() {
@@ -29,11 +30,12 @@ export default function HomePage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Loop over recipes and display each as a card */}
         {recipes.map((recipe) => (
-          <div
+          <Link
             key={recipe.id} // unique key for each list item
+            to={`/recipe/${recipe.id}`} // link to recipe detail page
             className="bg-white rounded-lg shadow-md overflow-hidden
-                       transform transition duration-300 ease-in-out
-                       hover:scale-[1.02] hover:shadow-xl"
+                      transform transition duration-300 ease-in-out
+                      hover:scale-[1.02] hover:shadow-xl"
             /*
               Card styles:
               - bg-white: white background
@@ -68,7 +70,7 @@ export default function HomePage() {
               {/* Recipe summary */}
               <p className="mt-2 text-sm text-gray-600">{recipe.summary}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>

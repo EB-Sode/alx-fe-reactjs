@@ -3,42 +3,115 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_zBAOY_ixP2l00u0ILELs_Be33JEcafCVg&s",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g parmesan cheese",
+      "Salt and black pepper"
+    ],
+    "instructions": "1. Cook spaghetti until al dente.\n2. Fry pancetta until crisp.\n3. Beat eggs and parmesan together.\n4. Combine pasta with pancetta and remove from heat.\n5. Quickly stir in egg mixture.\n6. Season with salt and black pepper and serve."
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://www.thespicehouse.com/cdn/shop/articles/Melanie_s_Chicken_Tikka_Marinade_720x.jpg?v=1594126841",
+    "ingredients": [
+      "500g chicken breast",
+      "1 cup yogurt",
+      "2 tbsp tikka masala spice mix",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "1 cup tomato puree",
+      "1/2 cup cream",
+      "Salt and pepper"
+    ],
+    "instructions": "1. Marinate chicken in yogurt and tikka masala spice for at least 1 hour.\n2. Grill or pan-fry chicken until cooked.\n3. Sauté onions and garlic until soft.\n4. Add tomato puree and simmer 10 minutes.\n5. Add cream and cooked chicken, simmer 5 more minutes.\n6. Season and serve with rice or naan."
   },
   {
     "id": 3,
     "title": "Beef Stroganoff",
     "summary": "Tender beef strips cooked in a creamy mushroom and onion sauce, served over noodles or rice.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-03-beef-stroganoff-190%2Fbeef-stroganoff-190-342_1",
+    "ingredients": [
+      "400g beef strips",
+      "1 onion, chopped",
+      "200g mushrooms, sliced",
+      "2 cloves garlic, minced",
+      "1 cup beef broth",
+      "1/2 cup sour cream",
+      "2 tbsp flour",
+      "2 tbsp butter",
+      "Salt and pepper"
+    ],
+    "instructions": "1. Cook beef in butter until browned, remove and set aside.\n2. Sauté onions and garlic, add mushrooms and cook until soft.\n3. Sprinkle flour and stir.\n4. Add beef broth, simmer until thickened.\n5. Stir in sour cream and return beef.\n6. Serve over noodles or rice."
   },
- {
+  {
     "id": 4,
     "title": "Vegetable Stir Fry",
     "summary": "A colorful mix of fresh vegetables stir-fried in a savory soy and garlic sauce.",
-    "image": "https://via.placeholder.com/150"
- },
- {
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRueFg0ek3-X08CZqq9NqmjRazYbgX38LvxlQ&s",
+    "ingredients": [
+      "1 red bell pepper, sliced",
+      "1 yellow bell pepper, sliced",
+      "1 broccoli head, chopped",
+      "2 carrots, sliced",
+      "2 cloves garlic, minced",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "Salt and pepper"
+    ],
+    "instructions": "1. Heat sesame oil in a wok.\n2. Add garlic and stir-fry 30 seconds.\n3. Add vegetables and stir-fry 5-7 minutes.\n4. Add soy sauce and season to taste.\n5. Serve hot over rice or noodles."
+  },
+  {
     "id": 5,
     "title": "Shrimp Fried Rice",
     "summary": "Stir-fried rice tossed with shrimp, eggs, peas, carrots, and soy sauce for a quick meal.",
-    "image": "https://via.placeholder.com/150"
- },
- {
+    "image": "https://www.allrecipes.com/thmb/nGSfu3uaEgBPdOxkxmD41NPw0Po=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/272834easy-homemade-shrimp-fried-ricefabeveryday4x3-64be29e3cfac42a9a20df5059c55e13d.jpg",
+    "ingredients": [
+      "2 cups cooked rice",
+      "200g shrimp, peeled",
+      "2 eggs, beaten",
+      "1/2 cup peas",
+      "1/2 cup carrots, diced",
+      "2 tbsp soy sauce",
+      "2 tbsp vegetable oil",
+      "Salt and pepper"
+    ],
+    "instructions": "1. Heat oil in a wok, cook shrimp until pink and remove.\n2. Scramble eggs and remove.\n3. Stir-fry carrots and peas until tender.\n4. Add rice, shrimp, eggs, and soy sauce.\n5. Mix well and season to taste.\n6. Serve hot."
+  },
+  {
     "id": 6,
     "title": "Margherita Pizza",
     "summary": "A simple and delicious pizza topped with tomato sauce, fresh mozzarella, and basil leaves.",
-    "image": "https://via.placeholder.com/150"
- },
- {
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaktpjFfXT4hZkSaOUgLRQDfVtWn7dV1ROlw3FmSBXJdDf0tX3KxEPlJ0wzBCY1NGcR78-DEp98_lB4p6iJit3ixmQsX1I&s=10",
+    "ingredients": [
+      "1 pizza dough",
+      "1/2 cup tomato sauce",
+      "150g fresh mozzarella, sliced",
+      "Fresh basil leaves",
+      "2 tbsp olive oil",
+      "Salt"
+    ],
+    "instructions": "1. Preheat oven to 220°C (425°F).\n2. Roll out pizza dough.\n3. Spread tomato sauce over dough.\n4. Add mozzarella slices.\n5. Bake 12-15 minutes until crust is golden.\n6. Top with fresh basil and drizzle olive oil before serving."
+  },
+  {
     "id": 7,
     "title": "Greek Salad",
     "summary": "A refreshing salad with cucumber, tomato, feta cheese, olives, and a light vinaigrette.",
-    "image": "https://via.placeholder.com/150"
- }
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZf9S611tO5qpl7l1pddqnjt1kzyCqWIwst7RYvGj0wVykvvfAge7PpvzDSCtx4e4glYVEqnx0U90TC7D8WYV1NOVkNXC8j-R9M0yxRcf0eQ",
+    "ingredients": [
+      "1 cucumber, sliced",
+      "2 tomatoes, chopped",
+      "1/2 red onion, thinly sliced",
+      "100g feta cheese, cubed",
+      "10-12 olives",
+      "2 tbsp olive oil",
+      "1 tbsp red wine vinegar",
+      "Salt and pepper"
+    ],
+    "instructions": "1. Combine cucumber, tomatoes, onion, feta, and olives in a bowl.\n2. Whisk olive oil, vinegar, salt, and pepper.\n3. Pour dressing over salad and toss gently.\n4. Serve fresh."
+  }
 ]
