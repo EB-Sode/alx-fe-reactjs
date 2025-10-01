@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "title": "Beef Stroganoff",
+    "summary": "Tender beef strips cooked in a creamy mushroom and onion sauce, served over noodles or rice.",
+    "image": "https://via.placeholder.com/150"
+  },
+ {
+    "id": 4,
+    "title": "Vegetable Stir Fry",
+    "summary": "A colorful mix of fresh vegetables stir-fried in a savory soy and garlic sauce.",
+    "image": "https://via.placeholder.com/150"
+ },
+ {
+    "id": 5,
+    "title": "Shrimp Fried Rice",
+    "summary": "Stir-fried rice tossed with shrimp, eggs, peas, carrots, and soy sauce for a quick meal.",
+    "image": "https://via.placeholder.com/150"
+ },
+ {
+    "id": 6,
+    "title": "Margherita Pizza",
+    "summary": "A simple and delicious pizza topped with tomato sauce, fresh mozzarella, and basil leaves.",
+    "image": "https://via.placeholder.com/150"
+ },
+ {
+    "id": 7,
+    "title": "Greek Salad",
+    "summary": "A refreshing salad with cucumber, tomato, feta cheese, olives, and a light vinaigrette.",
+    "image": "https://via.placeholder.com/150"
+ }
+]
