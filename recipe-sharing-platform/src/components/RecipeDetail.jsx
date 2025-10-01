@@ -1,10 +1,15 @@
-// src/components/RecipeDetailPage.jsx
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import recipeData from "../data.json";
 
 function RecipeDetailPage() {
   const { id } = useParams();
-  const recipe = recipeData.find((r) => r.id === parseInt(id));
+  const [recipe, setRecipe] = useState(null);
+
+  useEffect(() => {
+    const found = recipeData.find((r) => r.id === parseInt(id));
+    setRecipe(found);
+  }, [id]);
 
   if (!recipe) {
     return <h2 className="text-center text-red-500 mt-10">Recipe not found</h2>;
