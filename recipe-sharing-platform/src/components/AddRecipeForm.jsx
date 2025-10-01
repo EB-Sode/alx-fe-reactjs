@@ -6,9 +6,47 @@ export default function AddRecipeForm() {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
+  // State for validation errors
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+  const newErrors = {};
+
+  // Title validation
+  if (!title.trim()) {
+    newErrors.title = "Title is required.";
+  } else if (title.length < 3) {
+    newErrors.title = "Title must be at least 3 characters.";
+  }
+
+  // Ingredients validation
+  if (!ingredients.trim()) {
+    newErrors.ingredients = "Ingredients are required.";
+  } else {
+    const items = ingredients.split("\n").map((i) => i.trim()).filter(Boolean);
+    if (items.length < 2) {
+      newErrors.ingredients = "Please enter at least two ingredients (one per line).";
+    }
+  }
+
+  // Instructions validation
+  if (!instructions.trim()) {
+    newErrors.instructions = "Instructions are required.";
+  } else if (instructions.length < 10) {
+    newErrors.instructions = "Instructions should be at least 10 characters long.";
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0; // valid if no errors
+};
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return; // Stop submission if invalid
+    } 
 
     // Build recipe object
     const newRecipe = {
@@ -24,7 +62,10 @@ export default function AddRecipeForm() {
     setTitle("");
     setIngredients("");
     setInstructions("");
+    setErrors({});
   };
+
+
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -40,8 +81,12 @@ export default function AddRecipeForm() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="e.g Spaghetti Carbonara"
             required
           />
+          {errors.title && (
+            <p className="text-red-500 text-sm">{errors.title}</p>
+          )}
         </div>
 
         {/* Ingredients */}
@@ -57,6 +102,9 @@ export default function AddRecipeForm() {
             placeholder="e.g. 200g spaghetti&#10;100g bacon"
             required
           />
+          {errors.ingredients && (
+            <p className="text-red-500 text-sm">{errors.ingredients}</p>
+          )}
         </div>
 
         {/* Instructions */}
@@ -72,6 +120,9 @@ export default function AddRecipeForm() {
             placeholder="e.g. 1. Boil water.&#10;2. Cook pasta."
             required
           />
+          {errors.instructions && (
+            <p className="text-red-500 text-sm">{errors.instructions}</p>
+          )}
         </div>
 
         {/* Submit Button */}
