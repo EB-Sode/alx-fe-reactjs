@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
+import recipeData from '../data.json';
 
 export default function HomePage() {
   // State to store the recipes fetched from data.json
   const [recipes, setRecipes] = useState([]);
 
   // useEffect runs once after the component mounts ([])
-  // It fetches data.json from the "public" folder
-  useEffect(() => {
-    fetch("/data.json") // fetch from public/data.json
-      .then((res) => res.json()) // convert response to JSON
-      .then((data) => setRecipes(data)) // store data in state
-      .catch((err) => console.error("Error loading recipes:", err));
+
+    useEffect(() => {
+    // Load mock data directly instead of fetching
+    setRecipes(recipeData);
   }, []);
 
   return (
