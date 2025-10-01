@@ -62,7 +62,7 @@ export default function AddRecipeForm() {
         {/* Instructions */}
         <div>
           <label className="block text-gray-700 font-semibold mb-1">
-            Preparation Steps
+            Preparation steps
           </label>
           <textarea
             value={instructions}
