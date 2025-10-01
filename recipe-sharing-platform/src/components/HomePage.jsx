@@ -73,6 +73,12 @@ export default function HomePage() {
           </Link>
         ))}
       </div>
+      <Link
+        to="/addrecipe"
+        className="mt-6 inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-300 transition"
+      >
+        + Add New Recipe
+      </Link>
     </main>
   );
 }

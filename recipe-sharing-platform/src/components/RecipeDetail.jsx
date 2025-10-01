@@ -18,7 +18,7 @@ function RecipeDetailPage() {
   return (
     <div className="p-6 max-w-5xl mx-auto">
       {/* Back Button */}
-      <Link to="/" className="text-blue-600 hover:underline mb-6 inline-block">
+      <Link to="/" className="mt-6 text-blue-600 hover:underline mb-6 inline-block">
         ← Back to Recipes
       </Link>
 
